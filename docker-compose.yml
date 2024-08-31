@@ -1,0 +1,33 @@
+services:
+  shopper-db:
+    image: postgres:latest
+    restart: always
+    hostname: postgres
+    container_name: postgres-shopper
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: shopper_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - shopper_db:/var/lib/postgresql/data
+
+  app-backend:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - shopper-db
+    volumes:
+      - .:/app-backend
+    ports:
+      - 3001:3001
+    container_name: app-backend
+    restart: always
+
+volumes:
+  shopper_db:
+  app-backend:
+    external: true
