@@ -3,7 +3,7 @@ const errorDescriptions = {
   measureNotFound: 'Nenhuma leitura encontrada',
   invalidMeasureUUID: 'UUID inválido',
   invalidConfirmedValue: 'Número de confirmação inválido',
-  invalidMeasureType: 'Tipo de medição não permitido',
+  invalidMeasureType: 'Tipo de medição não permitida',
   invalidCustomerCode: 'Código de cliente inválido',
   invalidBase64: 'Código Base64 inválido',
   invalidImage: 'Código Base64 não é uma imagem',
